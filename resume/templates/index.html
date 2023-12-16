@@ -189,47 +189,38 @@
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
               <div class="swiper-wrapper">
-
+{% for w in ref %}
                 <div class="swiper-slide">
                   <div class="testimonial-box">
                     <div class="author-test">
-                      <img src="{% static 'img/testimonial-2.jpg' %}" alt="" class="rounded-circle b-shadow-a">
-                      <span class="author">Xavi Alonso</span>
+                         <h3 class="title-a">Referees</h3>
+                      <img src="/media/{{ w.Referee_Photo }}" alt="" class="rounded-circle b-shadow-a">
+                      <span class="author">{{ w.Name}}</span>
                     </div>
                     <div class="content-test">
                       <p class="description lead">
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
+                       {{ w.Brief_Message }}
+                      </p>
+                         <p class="description lead">
+                        {{ w.Phone }}
+                      </p>
+                        <p class="description lead">
+                        {{ w.Email }}
                       </p>
                     </div>
                   </div>
                 </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-box">
-                    <div class="author-test">
-                      <img src="{% static 'img/testimonial-4.jpg' %}" alt="" class="rounded-circle b-shadow-a">
-                      <span class="author">Marta Socrate</span>
-                    </div>
-                    <div class="content-test">
-                      <p class="description lead">
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div><!-- End testimonial item -->
+    {% endfor %}
               </div>
               <div class="swiper-pagination"></div>
             </div>
-
             <!-- <div id="testimonial-mf" class="owl-carousel owl-theme">
-
         </div> -->
           </div>
         </div>
       </div>
     </div><!-- End Testimonials Section -->
+
 
 
     <!-- ======= Contact Section ======= -->
@@ -248,26 +239,27 @@
                       </h5>
                     </div>
                     <div>
-                      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                      <form action="/sendmessage" method="post" role="form" class="php-email-form">
+                          {% csrf_token %}
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                              <input type="email" class="form-control" name="email"  placeholder="Your Email" required>
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                              <input type="text" class="form-control" name="subject"  placeholder="Subject" required>
                             </div>
                           </div>
                           <div class="col-md-12">
                             <div class="form-group">
-                              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                              <textarea class="form-control" name="description" rows="5" placeholder="Message" required></textarea>
                             </div>
                           </div>
                           <div class="col-md-12 text-center my-3">
@@ -290,15 +282,14 @@
                     </div>
                     <div class="more-info">
                       <p class="lead">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
-                        expedita aperiam aliquid at.
-                        Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
-                        mollitia inventore?
+                       Thank you for visiting! Whether you're looking to capture timeless moments through photography,
+                          create a stunning website, or enhance your network infrastructure, I'm here to bring your
+                          vision to life.
                       </p>
                       <ul class="list-ico">
-                        <li><span class="bi bi-geo-alt"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                        <li><span class="bi bi-phone"></span> (617) 557-0089</li>
-                        <li><span class="bi bi-envelope"></span> contact@example.com</li>
+                        <li><span class="bi bi-geo-alt"></span> 74-40635 SIGOMRE</li>
+                        <li><span class="bi bi-phone"></span> +254 746 280 248</li>
+                        <li><span class="bi bi-envelope"></span> omengomanuel@gmail.com</li>
                       </ul>
                     </div>
                     <div class="socials">
