@@ -3,6 +3,7 @@
 {% block body %}
 <!-- ======= Services Section ======= -->
  <main id="main">
+ {% for s in service %}
     <section id="services" class="services-mf pt-5 route">
       <div class="container">
         <div class="row">
@@ -27,9 +28,7 @@
               <div class="service-content">
                 <h2 class="s-title">Web Design</h2>
                 <p class="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                  provident vitae! Magni
-                  tempora perferendis eum non provident.
+                  {{ s.Web_Design_Description }}
                 </p>
               </div>
             </div>
@@ -42,9 +41,7 @@
               <div class="service-content">
                 <h2 class="s-title">Web Development</h2>
                 <p class="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                  provident vitae! Magni
-                  tempora perferendis eum non provident.
+                  {{ s.Web_Development_Description }}
                 </p>
               </div>
             </div>
@@ -57,9 +54,7 @@
               <div class="service-content">
                 <h2 class="s-title">Photography</h2>
                 <p class="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                  provident vitae! Magni
-                  tempora perferendis eum non provident.
+                  {{ s.Photography_Description }}
                 </p>
               </div>
             </div>
@@ -70,11 +65,9 @@
                 <span class="ico-circle"><i class="bi bi-binoculars"></i></span>
               </div>
               <div class="service-content">
-                <h2 class="s-title">Responsive Design</h2>
+                <h2 class="s-title">Networking Design</h2>
                 <p class="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                  provident vitae! Magni
-                  tempora perferendis eum non provident.
+                  {{ s.Network_Design_Description }}
                 </p>
               </div>
             </div>
@@ -87,9 +80,7 @@
               <div class="service-content">
                 <h2 class="s-title">Graphic Design</h2>
                 <p class="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                  provident vitae! Magni
-                  tempora perferendis eum non provident.
+                  {{ s.Graphic_Design_Description }}
                 </p>
               </div>
             </div>
@@ -102,9 +93,7 @@
               <div class="service-content">
                 <h2 class="s-title">Marketing Services</h2>
                 <p class="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                  provident vitae! Magni
-                  tempora perferendis eum non provident.
+                {{ s.Marketig_Services_Description }}
                 </p>
               </div>
             </div>
@@ -112,6 +101,7 @@
         </div>
       </div>
     </section><!-- End Services Section -->
+ {% endfor %}
  </main>
 
  <!-- ======= Footer ======= -->

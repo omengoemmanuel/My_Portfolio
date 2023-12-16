@@ -40,7 +40,7 @@ class New_Messages(models.Model):
         return self.name
 
 
-class services(models.Model):
+class servicess(models.Model):
     Web_Design_Description = models.CharField(max_length=200, null=False, blank=False)
     Web_Development_Description = models.CharField(max_length=200, null=False, blank=False)
     Photography_Description = models.CharField(max_length=200, null=False, blank=False)

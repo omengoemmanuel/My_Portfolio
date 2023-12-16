@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import home, project, referees, New_Messages
+from .models import home, project, referees, New_Messages, servicess
 
 
 # Create your views here.
@@ -20,7 +20,8 @@ def blog(request):
 
 
 def services(request):
-    return render(request, 'services.html')
+    service = servicess.objects.all()
+    return render(request, 'services.html', {'service': service})
 
 
 def work(request):
@@ -44,4 +45,3 @@ def sendmessage(request):
         return redirect("/")
 
     return redirect('/')
-
