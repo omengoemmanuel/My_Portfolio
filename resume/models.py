@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 # Create your models here.
@@ -50,3 +51,16 @@ class servicess(models.Model):
 
     def __str__(self):
         return self.Web_Design_Description
+
+
+class blogs(models.Model):
+    Blog_Photo = models.ImageField(upload_to="uploads/blogs", default="uploads/blogs/profile.jpg")
+    Blog_Category = models.CharField(max_length=30, null=False, blank=False)
+    blog_Title_Venue = models.CharField(max_length=100, null=False, blank=False)
+    Blog_Description = models.CharField(max_length=100, null=False, blank=False)
+    My_Photo = models.ImageField(upload_to="uploads/blogs", default="uploads/blogs/profile.jpg")
+    My_Name = models.CharField(max_length=50, null=False, blank=False)
+    Blog_Date = models.DateField(default=timezone.now())
+
+    def __str__(self):
+        return self.blog_Title_Venue

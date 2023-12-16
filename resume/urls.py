@@ -8,8 +8,7 @@ urlpatterns = [
     path('services', views.services, name="services"),
     path('contact', views.contact, name="contact"),
     path('work', views.work, name="work"),
-    path('sendmessage', views.sendmessage, name ="sendmessage")
-
-
+    path('sendmessage', views.sendmessage, name="sendmessage"),
+    path('blogsingle', views.blogsingle, name="blogsingle")
 
 ]
