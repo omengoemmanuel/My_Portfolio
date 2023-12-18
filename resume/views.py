@@ -50,3 +50,7 @@ def sendmessage(request):
 
 def blogsingle(request):
     return render(request, 'blog-single.html')
+
+
+def portfolio(request):
+    return render(request, 'portfolio-details.html')

@@ -9,6 +9,7 @@ urlpatterns = [
     path('contact', views.contact, name="contact"),
     path('work', views.work, name="work"),
     path('sendmessage', views.sendmessage, name="sendmessage"),
-    path('blogsingle', views.blogsingle, name="blogsingle")
+    path('blogsingle', views.blogsingle, name="blogsingle"),
+    path('portfolio', views.portfolio, name="portfolio")
 
 ]
