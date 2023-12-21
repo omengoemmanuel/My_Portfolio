@@ -7,7 +7,7 @@ def index(request):
     homes = home.objects.all()
     proj = project.objects.all()
     ref = referees.objects.all()
-    return render(request, 'index.html', {'homes': homes, 'proj': proj, 'ref': ref})
+    return render(request, 'index.html', {'navbar': 'index', 'homes': homes, 'proj': proj, 'ref': ref})
 
 
 def about(request):
