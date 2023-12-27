@@ -65,3 +65,13 @@ class blogs(models.Model):
 
     def __str__(self):
         return self.blog_Title_Venue
+
+
+class works(models.Model):
+    Photo = models.ImageField(upload_to="uploads/work", default="upload/work/work.jpg")
+    Name = models.CharField(max_length=100, null=False, blank=False, default="name")
+    Type_of_Work = models.CharField(max_length=100, null=False, blank=False)
+    date = models.DateField(default=timezone.now())
+
+    def __str__(self):
+        return self.Type_of_Work

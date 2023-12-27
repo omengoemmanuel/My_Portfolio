@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import home, project, referees, New_Messages, servicess, blogs
+from .models import home, project, referees, New_Messages, servicess, blogs, works
 
 
 # Create your views here.
@@ -26,7 +26,8 @@ def services(request):
 
 
 def work(request):
-    return render(request, 'work.html')
+    workss = works.objects.all()
+    return render(request, 'work.html', {'workss':workss})
 
 
 def contact(request):
