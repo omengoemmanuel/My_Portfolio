@@ -10,6 +10,6 @@ urlpatterns = [
     path('work', views.work, name="work"),
     path('sendmessage', views.sendmessage, name="sendmessage"),
     path('blogsingle', views.blogsingle, name="blogsingle"),
-    path('portfolio', views.portfolio, name="portfolio")
+    path('workdetails', views.workdetails, name="workdetails")
 
 ]

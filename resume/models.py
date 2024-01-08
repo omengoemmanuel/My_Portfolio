@@ -43,12 +43,12 @@ class New_Messages(models.Model):
 
 
 class servicess(models.Model):
-    Web_Design_Description = models.CharField(max_length=200, null=False, blank=False)
-    Web_Development_Description = models.CharField(max_length=200, null=False, blank=False)
-    Photography_Description = models.CharField(max_length=200, null=False, blank=False)
-    Network_Design_Description = models.CharField(max_length=200, null=False, blank=False)
-    Graphic_Design_Description = models.CharField(max_length=200, null=False, blank=False)
-    Marketig_Services_Description = models.CharField(max_length=200, null=False, blank=False)
+    Web_Design_Description = models.CharField(max_length=2000, null=False, blank=False)
+    Web_Development_Description = models.CharField(max_length=2000, null=False, blank=False)
+    Photography_Description = models.CharField(max_length=2000, null=False, blank=False)
+    Network_Design_Description = models.CharField(max_length=2000, null=False, blank=False)
+    Graphic_Design_Description = models.CharField(max_length=2000, null=False, blank=False)
+    Marketig_Services_Description = models.CharField(max_length=2000, null=False, blank=False)
 
     def __str__(self):
         return self.Web_Design_Description
@@ -75,3 +75,26 @@ class works(models.Model):
 
     def __str__(self):
         return self.Type_of_Work
+
+
+class portfolios(models.Model):
+    Project_Photo1 = models.ImageField(upload_to="uploads/portfolio", default="uploads/portfolio/portfoli.jpg")
+    Project_Photo2 = models.ImageField(upload_to="uploads/portfolio", default="uploads/portfolio/portfoli.jpg")
+    Project_Photo3 = models.ImageField(upload_to="uploads/portfolio", default="uploads/portfolio/portfoli.jpg")
+    Project_Category = models.CharField(max_length=100, null=False, blank=False)
+    Project_Client = models.CharField(max_length=100, null=False, blank=False)
+    Project_Date = models.DateField(default=timezone.now())
+    project_Url = models.URLField()
+    Project_Description = models.CharField(max_length=500, null=False, blank=False)
+
+    def __str__(self):
+        return self.Project_Client
+
+
+class work_done_details(models.Model):
+    Project_Photo1 = models.ImageField(upload_to="uploads/workdone", default="uploads/workdone/work.jpg")
+    Project_Photo2 = models.ImageField(upload_to="uploads/workdone", default="uploads/workdone/work.jpg")
+    Project_Photo3 = models.ImageField(upload_to="uploads/workdone", default="uploads/workdone/work.jpg")
+    Project_Photo4 = models.ImageField(upload_to="uploads/workdone", default="uploads/workdone/work.jpg")
+    Project_Photo5 = models.ImageField(upload_to="uploads/workdone", default="uploads/workdone/work.jpg")
+    Project_Photo6 = models.ImageField(upload_to="uploads/workdone", default="uploads/workdone/work.jpg")

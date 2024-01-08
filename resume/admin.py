@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import home, project, referees, New_Messages, servicess, blogs,works
+from .models import home, project, referees, New_Messages, servicess, blogs,works,portfolios, work_done_details
 
 # Register your models here.
 admin.site.register(home)
@@ -9,3 +9,5 @@ admin.site.register(New_Messages)
 admin.site.register(servicess)
 admin.site.register(blogs)
 admin.site.register(works)
+admin.site.register(portfolios)
+admin.site.register(work_done_details)

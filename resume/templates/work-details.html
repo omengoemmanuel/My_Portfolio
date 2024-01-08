@@ -5,8 +5,13 @@
   <main id="main">
 
     <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
+
+
+     {% for k in port %}
+      <section id="portfolio-details" class="portfolio-details">
       <div class="container">
+          <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
 
         <div class="row gy-4">
 
@@ -15,15 +20,14 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="{% static 'img/portfolio-details-1.jpg' %}" alt="">
+                  <img src="/media/{{ k.Project_Photo1 }}" alt="" height="700">
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="{% static 'img/portfolio-details-2.jpg' %}" alt="">
+                   <div class="swiper-slide">
+                  <img src="/media/{{ k.Project_Photo2 }}" alt="" height="700">
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="{% static 'img/portfolio-details-3.jpg' %}" alt="">
+                   <div class="swiper-slide">
+                  <img src="/media/{{ k.Project_Photo3 }}" alt="" height="700">
                 </div>
 
               </div>
@@ -35,24 +39,27 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Category</strong>: {{ k.Project_Category }}</li>
+                <li><strong>Client</strong>: {{ k.Project_Client }}</li>
+                <li><strong>Project date</strong>: {{ k.Project_Date }}</li>
+                <li><strong>Project URL</strong>: {{ k.project_Url }} </a></li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>Project Description</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                {{ k.Project_Description }}
               </p>
             </div>
           </div>
+                </div>
+            </div>
 
         </div>
 
+
       </div>
-    </section><!-- End Portfolio Details Section -->
+    </section><!-- End Portfolio Details Section --> {% endfor %}
 
   </main><!-- End #main -->
 
@@ -86,7 +93,4 @@
   <!-- Template Main JS File -->
   <script src="{% static 'js/main.js' %}"></script>
 
-</body>
-
-</html>
 {% endblock %}

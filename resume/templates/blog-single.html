@@ -4,56 +4,63 @@
 
   <main id="main">
 
+{% for a in workdone %}
     <!-- ======= Blog Single Section ======= -->
     <section class="blog-wrapper sect-pt4" id="blog">
       <div class="container">
         <div class="row">
           <div class="col-md-8">
             <div class="post-box">
-              <div class="post-thumb">
-                <img src="{% static 'img/post-1.jpg' %}" class="img-fluid" alt="">
-              </div>
+
+                <div class="portfolio-details-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide">
+                  <img src="/media/{{ a.Project_Photo1 }}" class="img-fluid" alt="" width="1000" height="400">
+                </div>
+                        <div class="swiper-slide">
+                  <img src="/media/{{ a.Project_Photo2 }}" class="img-fluid" alt="" width="1000" height="400">
+                </div>
+                        <div class="swiper-slide">
+                  <img src="/media/{{ a.Project_Photo3 }}" class="img-fluid" alt="" width="1000" height="400">
+                </div>
+                        <div class="swiper-slide">
+                  <img src="/media/{{ a.Project_Photo4 }}" class="img-fluid" alt="" width="1000" height="400">
+                </div>
+                        <div class="swiper-slide">
+                  <img src="/media/{{ a.Project_Photo5 }}" class="img-fluid" alt="" width="1000" height="400">
+                </div>
+                        <div class="swiper-slide">
+                  <img src="/media/{{ a.Project_Photo6 }}" class="img-fluid" alt="" width="1000" height="400">
+                </div>
+                    </div>
+                </div>
+
+
               <div class="post-meta">
-                <h1 class="article-title">Lorem ipsum dolor sit amet consec tetur adipisicing</h1>
+                <h1 class="article-title">From Vision to Reality This My Diverse Portfolio Showcase</h1>
               </div>
               <div class="article-content">
                 <p>
-                  Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
-                  porta. Quisque velit
-                  nisi, pretium ut lacinia in, elementum id enim. Praesent sapien massa, convallis a pellentesque
-                  nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                  cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                  Nulla quis lorem ut libero malesuada feugiat.
+                This section invites you to explore the highlights of my portfolio. From groundbreaking projects that
+                    pushed the boundaries of innovation to collaborations that fostered meaningful connections, each
+                    endeavor has left an indelible mark on my career. Join me as we unpack the stories behind the work,
+                    revealing the passion and dedication invested in each endeavor.
                 </p>
                 <p>
-                  Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Mauris blandit
-                  aliquet elit, eget tincidunt
-                  nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Donec sollicitudin molestie malesuada.
+                 Embarking on this exploration, i delve into the evolution of my professional journey. From the early
+                    days of coding, photography, I have honed my skills and navigated the intricacies of IT fields and
+                    photo industry. Each step has shaped me, allowing for a unique blend of expertise and creativity
+                    that defines my approach to my profession.
                 </p>
                 <p>
-                  Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Praesent
-                  sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-                  sem. Donec rutrum congue leo eget malesuada.
+                  As we conclude this journey through my portfolio, I cast my gaze towards the future. The projects
+                    outlined here are not just a testament to my past; they lay the foundation for the exciting
+                    endeavors that lie ahead. Join me in envisioning the next chapter of my professional story, as I
+                    continue to strive for excellence, embrace challenges, and contribute to the ever-evolving
+                    landscape of new and trending technological ideas.
                 </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat.
-                  Curabitur arcu erat,
-                  accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor
-                  volutpat. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium
-                  ut lacinia in, elementum id enim.
-                </p>
-                <blockquote class="blockquote">
-                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <p>
-                  Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Mauris blandit
-                  aliquet elit, eget tincidunt
-                  nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Donec sollicitudin molestie malesuada.
-                </p>
+
+
               </div>
             </div>
             <div class="box-comments">
@@ -130,7 +137,7 @@
                   Leave a Reply
                 </h3>
               </div>
-              <form class="form-mf">
+              <form class="form-mf" method="" action="" enctype="multipart/form-data">
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <div class="form-group">
@@ -144,7 +151,7 @@
                   </div>
                   <div class="col-md-12 mb-3">
                     <div class="form-group">
-                      <input type="url" class="form-control input-mf" id="inputUrl" placeholder="Website">
+                      <input type="url" class="form-control input-mf" id="inputUrl" placeholder="Title">
                     </div>
                   </div>
                   <div class="col-md-12 mb-3">
@@ -163,6 +170,7 @@
         </div>
       </div>
     </section><!-- End Blog Single Section -->
+  {% endfor %}
 
   </main><!-- End #main -->
 
