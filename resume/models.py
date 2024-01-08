@@ -98,3 +98,15 @@ class work_done_details(models.Model):
     Project_Photo4 = models.ImageField(upload_to="uploads/workdone", default="uploads/workdone/work.jpg")
     Project_Photo5 = models.ImageField(upload_to="uploads/workdone", default="uploads/workdone/work.jpg")
     Project_Photo6 = models.ImageField(upload_to="uploads/workdone", default="uploads/workdone/work.jpg")
+
+
+class feedback(models.Model):
+    name = models.CharField(max_length=100, null=False, blank=False)
+    email = models.EmailField()
+    title = models.CharField(max_length=100, null=False, blank=False)
+    comment = models.CharField(max_length=1000, null=False, blank=False)
+    Photo = models.ImageField(upload_to="uploads/feedback", default="uploads/feedback/feedback.png")
+    date = models.DateField(default=timezone.now())
+
+    def __str__(self):
+        return self.name

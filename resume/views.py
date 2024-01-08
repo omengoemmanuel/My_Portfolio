@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import home, project, referees, New_Messages, servicess, blogs, works, portfolios, work_done_details
+from .models import home, project, referees, New_Messages, servicess, blogs, works, portfolios, work_done_details, \
+    feedback
 
 
 # Create your views here.
@@ -51,9 +52,25 @@ def sendmessage(request):
 
 def blogsingle(request):
     workdone = work_done_details.objects.all()
-    return render(request, 'blog-single.html', {'workdone':workdone})
+    reply = feedback.objects.all()
+    return render(request, 'blog-single.html', {'workdone': workdone, 'reply':reply})
 
 
 def workdetails(request):
     port = portfolios.objects.all()
     return render(request, 'work-details.html', {'port': port})
+
+
+def feedbackdata(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        title = request.POST.get('title')
+        comment = request.POST.get('comment')
+
+        feed = feedback(name=name, email=email, title=title, comment=comment)
+        feed.save()
+        return redirect("/blogsingle")
+
+    return redirect("/blogsingle")
+

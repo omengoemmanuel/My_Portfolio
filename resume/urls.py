@@ -10,6 +10,7 @@ urlpatterns = [
     path('work', views.work, name="work"),
     path('sendmessage', views.sendmessage, name="sendmessage"),
     path('blogsingle', views.blogsingle, name="blogsingle"),
-    path('workdetails', views.workdetails, name="workdetails")
+    path('workdetails', views.workdetails, name="workdetails"),
+    path('feedbackdata', views.feedbackdata, name="feedbackdata")
 
 ]
