@@ -19,8 +19,9 @@
             </div>
           </div>
         </div>
-          {% for s in workss %}
-        <div class="row">
+
+
+          <div class="row">{% for s in workss %}
           <div class="col-md-4">
             <div class="work-box">
               <a href="/media/{{ s.Photo }}" data-gallery="portfolioGallery" class="portfolio-lightbox">
@@ -44,11 +45,9 @@
                 </div>
               </div>
             </div>
-          </div>
-            {% endfor %}
-
-
+          </div>{% endfor %}
         </div>
+
       </div>
     </section><!-- End Portfolio Section -->
   </main>
