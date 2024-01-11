@@ -53,7 +53,8 @@ def sendmessage(request):
 def blogsingle(request):
     workdone = work_done_details.objects.all()
     reply = feedback.objects.all()
-    return render(request, 'blog-single.html', {'workdone': workdone, 'reply':reply})
+    feed = feedback.objects.count()
+    return render(request, 'blog-single.html', {'workdone': workdone, 'reply':reply, 'feed':feed})
 
 
 def workdetails(request):
@@ -73,4 +74,5 @@ def feedbackdata(request):
         return redirect("/blogsingle")
 
     return redirect("/blogsingle")
+
 
