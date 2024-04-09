@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+
 from .models import home, project, referees, New_Messages, servicess, blogs, works, portfolios, work_done_details, \
     feedback
 
@@ -54,7 +55,7 @@ def blogsingle(request):
     workdone = work_done_details.objects.all()
     reply = feedback.objects.all()
     feed = feedback.objects.count()
-    return render(request, 'blog-single.html', {'workdone': workdone, 'reply':reply, 'feed':feed})
+    return render(request, 'blog-single.html', {'workdone': workdone, 'reply': reply, 'feed': feed})
 
 
 def workdetails(request):
@@ -74,5 +75,3 @@ def feedbackdata(request):
         return redirect("/blogsingle")
 
     return redirect("/blogsingle")
-
-
