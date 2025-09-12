@@ -16,7 +16,7 @@ class project(models.Model):
     Project_Photo = models.ImageField(upload_to='uploads/projects', default='uploads/projects/photo.jpg')
     Project_Name = models.CharField(max_length=100, null=False, blank=False, default='project name')
     Project_Type = models.CharField(max_length=100, null=False, blank=False, default='project type')
-    Date_Uploaded = models.DateField(default=now())
+    Date_Uploaded = models.DateField(default=now)
 
     def __str__(self):
         return self.Project_Name
@@ -62,7 +62,7 @@ class blogs(models.Model):
     Blog_Description = models.CharField(max_length=100, null=False, blank=False)
     My_Photo = models.ImageField(upload_to="uploads/blogs", default="uploads/blogs/profile.jpg")
     My_Name = models.CharField(max_length=50, null=False, blank=False)
-    Blog_Date = models.DateField(default=timezone.now())
+    Blog_Date = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.blog_Title_Venue
@@ -72,7 +72,7 @@ class works(models.Model):
     Photo = models.ImageField(upload_to="uploads/work", default="upload/work/work.jpg")
     Name = models.CharField(max_length=100, null=False, blank=False, default="name")
     Type_of_Work = models.CharField(max_length=100, null=False, blank=False)
-    date = models.DateField(default=timezone.now())
+    date = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.Type_of_Work
@@ -84,7 +84,7 @@ class portfolios(models.Model):
     Project_Photo3 = models.ImageField(upload_to="uploads/portfolio", default="uploads/portfolio/portfoli.jpg")
     Project_Category = models.CharField(max_length=100, null=False, blank=False)
     Project_Client = models.CharField(max_length=100, null=False, blank=False)
-    Project_Date = models.DateField(default=timezone.now())
+    Project_Date = models.DateField(default=timezone.now)
     project_Url = models.URLField()
     Project_Description = models.CharField(max_length=500, null=False, blank=False)
 
